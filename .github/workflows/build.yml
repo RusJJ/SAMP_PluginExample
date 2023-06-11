@@ -105,7 +105,9 @@ jobs:
         echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
     - name: install packages
-      run: sudo apt-get install g++-multilib
+      run: |
+        sudo apt-get update
+        sudo apt-get install g++-multilib
 
     - name: Install CMake
       uses: lukka/get-cmake@latest
@@ -144,7 +146,9 @@ jobs:
         echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
     - name: install packages
-      run: sudo apt-get install g++-multilib
+      run: |
+        sudo apt-get update
+        sudo apt-get install g++-multilib
 
     - name: Install CMake
       uses: lukka/get-cmake@latest
